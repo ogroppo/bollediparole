@@ -1,27 +1,28 @@
 <template name="registrationForm">
   {{#form class="registrationForm"}}
+    <label for="Username">Come ti chiami?</label>
     <input
-      label="Email"
-      type="email"
-      name="email"
-      placeholder="you@domain.com"
-      required="required"
-    />
-    <input
-      type="password"
-      label="Password"
-      name="password"
-      placeholder="..."
-      required="required"
-    />
-    <input
+      type="text"
       label="Username"
       name="username"
-      placeholder="eg Deadpool, Tom Bar, jimmy123"
       required="required"
     />
-    <div class="form_buttons">
-      <button type="submit" class="Button FloatRight">Register</button>
-    </div>
+    <label for="Email">Che indirizzo elettronico hai?</label>
+    <input
+      id="Email"
+      type="email"
+      name="email"
+      required="required"
+    />
+    <label for="Email">Scegli una parola segreta</label>
+    <input
+      type="password"
+      id="Password"
+      name="password"
+      required="required"
+    />
+    <footer>
+      <button type="submit" class="Button">Entra</button>
+    </footer>
   {{/form}}
 </template>

@@ -4,6 +4,11 @@
 	z-index: 3;
 	position: relative;
   padding: 5px 0;
+  .createBubbleButton{
+    position: absolute;
+    left: 15px;
+    top: 20px;
+  }
   h1 {
     margin: 0;
     color: white;

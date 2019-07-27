@@ -12,6 +12,9 @@
           {{bubbleDetail.author}}
         </div>
         <div class="text">
+          {{bubbleDetail.title}}
+        </div>
+        <div class="text">
           {{bubbleDetail.text}}
         </div>
         <button class="chiudiBolla">Chiudi Bolla</button>
@@ -22,6 +25,11 @@
 
 <template name="bubble">
   <div class="bubble {{class}}" style="left:{{left}}px">
-    {{text}}
+    <div class="title">
+      {{title}}
+    </div>
+    <div class="text">
+      {{text}}
+    </div>
   </div>
 </template>

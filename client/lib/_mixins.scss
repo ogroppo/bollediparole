@@ -171,17 +171,14 @@ $caretSize: 4px;
 }
 
 @mixin input{
-	color: $black;
-	border: 1px solid $grey;
-	border-radius: 2px;
+	color: white;
+  background: none;
+	border: 1px solid white;
+	border-radius: 5px;
 	width: 100%;
-	background-color: white;
 	font-size: 13px;
 	transition: all .2s;
 	@include boxFocus;
-	&:hover{
-		border-color: $black;
-	}
 }
 
 @mixin textInput{
@@ -195,34 +192,32 @@ $caretSize: 4px;
   &.focus,
 	&:focus{
 		outline: 0;
-		box-shadow: 0 0 0 4px rgba($blue, .3);
+		box-shadow: 0 0 0 4px rgba(white, .3);
 	}
 }
 
 @mixin button{
   white-space: nowrap;
   font-size: 14px;
-	color: $grey;
-	border: 1px solid $grey;
-	border-radius: 4px;
+	color: white;
+	border: 1px solid white;
+	border-radius: 8px;
 	min-height: $InputHeight;
 	padding: 0 9px;
 	transition: all 0.2s;
 	.icon{
-		fill: $grey;
 		margin-right: 5px;
     vertical-align: bottom;
 	}
 	@include boxFocus;
 	&:active{
 		outline: 0;
-		box-shadow: inset 0 0 1em $lightGrey;
+		box-shadow: inset 0 0 1em white;
 	}
 	&:hover:not([disabled]){
-		color: $black;
-		border-color: $black;
+
 		.icon{
-			fill: $black;
+
 		}
 	}
 	&[disabled]{

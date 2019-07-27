@@ -11,7 +11,7 @@ Template.registrationForm.events({
 			if(err){
 				ErrorMessage(err.reason)
 			}else{
-				Router.go('homeRoute');
+				CloseModal()
 			}
 		})
   }

@@ -6,13 +6,14 @@ html{
 
 body {
 	height: 100%;
-	padding: 0;
 	margin: 0;
-	font-family: system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  padding: 0;
 	font-size: 14px;
 	line-height: 1.2;
-	background-color: white;
-	color: $black;
+	background: #00b4ff;
+	color: white;
+  font-family: 'Covered By Your Grace', cursive;
+	overflow-x: hidden;
 }
 
 main{
@@ -48,9 +49,18 @@ button{
 	cursor: pointer;
 	font-size: inherit;
 	line-height: 1;
+  font-family: 'Covered By Your Grace', cursive;
+  color: white;
 	&::-moz-focus-inner {
 	  border: 0;
 	}
+}
+
+a{
+  color: white;
+  &:visited{
+    color: white;
+  }
 }
 
 input[type="file"]{
@@ -87,13 +97,10 @@ input[type="search"]{
 
 textarea{
 	@include input;
-  height: $InputHeight;
+  min-height: 60px;
 	resize: vertical;
   vertical-align: middle; //remove margin bottom
 	padding: 4px 6px;
-  &:focus{
-    min-height: $InputHeight * 3;
-  }
 }
 
 select{
