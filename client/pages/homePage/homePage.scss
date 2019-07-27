@@ -1,0 +1,94 @@
+@import '{}/client/lib/all';
+
+.homePage{
+  .bubble {
+	  border-radius: 50%;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+    height: 200px;
+    position: absolute;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    opacity: 0;
+    cursor: pointer;
+    &.animate{
+      //animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+      animation: animateBubble 20s linear, sideWays 2s ease-in-out infinite alternate;
+      &:hover{
+        animation-play-state: paused;
+      }
+    }
+    &.explode{
+      animation: animateBubble 20s linear, explode 2s linear;
+    }
+  }
+}
+
+.readBubble{
+  position: fixed;
+  width: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 60vh;
+  border-radius: 20%;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+  background: #00b4ff;
+  padding: 40px 20px;
+  overflow-y: scroll;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  .author{
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .text{
+  }
+  button{
+    margin-top: 40px;
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
+@keyframes animateBubble {
+    0% {
+      opacity: 0;
+      top: 90vh;
+    }
+    20% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      top: 0;
+    }
+}
+
+@keyframes sideWays {
+    0% {
+        margin-left:0px;
+    }
+    100% {
+        margin-left:50px;
+    }
+}
+
+@keyframes explode {
+    0% {
+      width: 100px;
+      height: 100px;
+    }
+    100% {
+      width: 1000px;
+      height: 1000px;
+    }
+}

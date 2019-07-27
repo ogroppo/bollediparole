@@ -1,0 +1,9 @@
+<template name="registerModal">
+	{{#modal class="registerModal"}}
+		<main>
+			<h1>Register a new user</h1>
+			<p>Have an account already? go to <a href="{{pathFor 'loginRoute'}}">Login</a></p>
+			{{>registrationForm}}
+		</main>
+	{{/modal}}
+</template>

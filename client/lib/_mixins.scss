@@ -1,0 +1,320 @@
+@import '{}/client/lib/vars';
+
+@mixin absPos($left: 0, $top: 0){
+	position: absolute;
+	left: $left;
+	top: $top;
+}
+
+@mixin noPrint{
+  @media print{
+    display: none;
+  }
+}
+
+@mixin centerContent{
+	max-width: 90%;
+	margin: 0 auto;
+	padding: 0 2%;
+}
+
+@mixin showOnFocus{
+	position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+	&:focus{
+		z-index: 20;
+		width: auto;
+		height: auto;
+		clip: auto;
+	}
+}
+
+$caretSize: 4px;
+@mixin caret{
+	position: relative;
+	padding-right: 20px;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		right: 8px;
+		width: 0px;
+		border: $caretSize solid;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+		border-left-color: transparent;
+		margin-top: -1px;
+	}
+	&[aria-expanded]{
+		&:after {
+			margin-top: - $caretSize - 2px;
+			border: $caretSize solid;
+			border-right-color: transparent;
+			border-top-color: transparent;
+			border-left-color: transparent;
+		}
+	}
+}
+
+@mixin size($width: 1em, $height: 1em){
+	width: $width;
+	height: $height;
+}
+
+@mixin clearfix{
+	&:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+}
+
+@mixin circleMask{
+   	border-radius: 50%;
+    overflow: hidden;
+}
+
+@mixin expand{
+  width: 100%;
+  height: 100%;
+}
+
+@mixin ellipsis($max-width: 100%){
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width: $max-width;
+}
+
+@mixin unselectable{
+	user-select: none;
+}
+
+@mixin centerX{
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+@mixin centerXabs{
+	position: absolute;
+	@include centerX;
+}
+
+@mixin centerXrel{
+	position: relative;
+	@include centerX;
+}
+
+@mixin centerY{
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+@mixin centerYrel{
+	position: relative;
+	@include centerY;
+}
+
+@mixin centerYabs{
+	position: absolute;
+	@include centerY;
+}
+
+@mixin centerXY{
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin centerXYabs{
+	position: absolute;
+	@include centerXY;
+}
+
+@import '{}/client/lib/vars';
+
+@mixin searchContainer{
+	padding-top: 5px;
+	max-width: 400px;
+	margin: 0 auto;
+	position: relative;
+}
+
+@mixin searchForm{
+	@include clearfix;
+}
+
+@mixin message{
+	position: fixed;
+	z-index: 10;
+	left: 50%;
+	top: 10px;
+	transform: translate(-50%, 0);
+  background: white;
+	border-radius: 5px;
+	padding: 13px 25px;
+	p{
+		float: left;
+		margin: 0;
+		line-height: 20px;
+	}
+	button{
+		padding: 3px;
+		float: right;
+		height: 20px;
+		margin-left: 15px;
+	}
+}
+
+@mixin input{
+	color: $black;
+	border: 1px solid $grey;
+	border-radius: 2px;
+	width: 100%;
+	background-color: white;
+	font-size: 13px;
+	transition: all .2s;
+	@include boxFocus;
+	&:hover{
+		border-color: $black;
+	}
+}
+
+@mixin textInput{
+	@include input;
+	height: $InputHeight;
+	padding: 0 6px;
+	transition: all 0.2s;
+}
+
+@mixin boxFocus{
+  &.focus,
+	&:focus{
+		outline: 0;
+		box-shadow: 0 0 0 4px rgba($blue, .3);
+	}
+}
+
+@mixin button{
+  white-space: nowrap;
+  font-size: 14px;
+	color: $grey;
+	border: 1px solid $grey;
+	border-radius: 4px;
+	min-height: $InputHeight;
+	padding: 0 9px;
+	transition: all 0.2s;
+	.icon{
+		fill: $grey;
+		margin-right: 5px;
+    vertical-align: bottom;
+	}
+	@include boxFocus;
+	&:active{
+		outline: 0;
+		box-shadow: inset 0 0 1em $lightGrey;
+	}
+	&:hover:not([disabled]){
+		color: $black;
+		border-color: $black;
+		.icon{
+			fill: $black;
+		}
+	}
+	&[disabled]{
+		cursor: not-allowed;
+    opacity: .4;
+	}
+}
+
+@mixin textButton{
+	@include button;
+	border: none;
+  padding-left: $textButtonSidePadding;
+  padding-right: $textButtonSidePadding;
+	&[disabled]{
+		border: none;
+	}
+}
+
+@mixin greenButton{
+	@include button;
+	background: $grey;
+	color: white;
+	.icon{
+		fill: white;
+	}
+	&:focus,
+	&:hover:not([disabled]){
+		cursor: pointer;
+		color: white;
+		background-color: $green;
+		border-color: $green;
+		.icon{
+			fill: white;
+		}
+	}
+}
+
+@mixin deleteButton{
+	@include button;
+	background: $grey;
+	color: white;
+	.icon{
+		fill: white;
+	}
+	&:focus,
+	&:hover:not([disabled]){
+		cursor: pointer;
+		color: white;
+		background-color: $red;
+		.icon{
+			fill: white;
+		}
+	}
+}
+
+@mixin mergeButton{
+	@include button;
+	background: $grey;
+	color: white;
+	&:focus,
+	&:hover:not([disabled]){
+		cursor: pointer;
+		color: $black;
+		background-color: $yellow;
+	}
+}
+
+@mixin mergeButton{
+	@include button;
+	background: $grey;
+	color: white;
+	&:focus,
+	&:hover:not([disabled]){
+		cursor: pointer;
+		color: $black;
+		background-color: $yellow;
+	}
+}
+
+@mixin contentPanel{
+  @include centerContent;
+  @include clearfix;
+  position: relative;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,.2);
+  background-color: rgba(255,255,255,0.8);
+  border: 1px solid $lightGrey;
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  @media print {
+    box-shadow: initial;
+  }
+}

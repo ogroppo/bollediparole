@@ -1,0 +1,23 @@
+$iphone6plus: 414px;
+$ipadLandscape: 1024px;
+$ipadPortrait: 768px;
+
+@mixin mobile {
+	@media only screen and (max-width: $iphone6plus) { @content; }
+}
+
+@mixin tablet {
+	@media only screen and (min-width: $iphone6plus + 1) and (max-width: $ipadLandscape) { @content; }
+}
+
+@mixin toPortrait {
+	@media only screen and (max-width: $ipadPortrait) { @content; }
+}
+
+@mixin fromTablet {
+	@media only screen and (min-width: $iphone6plus + 1) { @content; }
+}
+
+@mixin desktop {
+	@media only screen and (min-width: $ipadLandscape + 1) { @content; }
+}

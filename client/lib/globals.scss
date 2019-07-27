@@ -1,0 +1,157 @@
+@import '{}/client/lib/all';
+
+html{
+  height: 100%;
+}
+
+body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	font-size: 14px;
+	line-height: 1.2;
+	background-color: white;
+	color: $black;
+}
+
+main{
+  position: relative;
+  overflow-x: scroll;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+h1{
+  font-size: 26px;
+  font-weight: normal;
+}
+
+h1, h2, h3, h3, h5, h6{
+	margin: 0;
+	padding: 0;
+}
+
+ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+button{
+	padding: 0;
+	background: none;
+	border: 0;
+  outline: 0;
+	cursor: pointer;
+	font-size: inherit;
+	line-height: 1;
+	&::-moz-focus-inner {
+	  border: 0;
+	}
+}
+
+input[type="file"]{
+  @include input;
+  height: $InputHeight;
+  padding: 4px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="search"],
+input[type="email"],
+input[type="password"]{
+	@include textInput;
+}
+
+input[type="search"]{
+	-webkit-appearance: none;
+}
+
+[type=checkbox]{
+	border-radius: 2px;
+	@include boxFocus;
+}
+
+[type=checkbox] + label{
+	margin-left: 5px;
+	display: inline-block;
+}
+
+[type=radio]{
+	margin: 0;
+}
+
+textarea{
+	@include input;
+  height: $InputHeight;
+	resize: vertical;
+  vertical-align: middle; //remove margin bottom
+	padding: 4px 6px;
+  &:focus{
+    min-height: $InputHeight * 3;
+  }
+}
+
+select{
+	@include button;
+  color: $black;
+	padding-right: 12px;
+	width: 100%;
+	background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+) no-repeat 99% 50%;
+	appearance: none;
+	&:-moz-focusring {
+	  color: transparent;
+	  text-shadow: 0 0 0 $black;
+	}
+}
+
+a{
+  cursor: pointer;
+  & > * {
+    cursor: pointer;
+  }
+	text-decoration: none;
+	color: $blue;
+	border-radius: 2px;
+	&:hover{
+		color: $blue;
+		text-decoration: underline;
+    *{
+      text-decoration: underline;
+    }
+	}
+	@include boxFocus;
+	&:visited{
+		color: $blue;
+	}
+  .icon{
+    margin-right: 4px;
+  }
+}
+
+summary{
+	cursor: pointer;
+}
+
+table{
+	border-collapse: collapse;
+}
+
+small{
+	font-size: 12px;
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+p{
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}

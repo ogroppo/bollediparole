@@ -1,0 +1,28 @@
+@import '{}/client/lib/all';
+
+.form{
+  fieldset{
+    padding: 10px 0 1px 10px;
+    margin: 0 0 8px 0;
+    border: 2px solid $grey;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    legend{
+      cursor: default;
+      color: $grey;
+      text-align: left;
+      padding: 0;
+      margin: 0;
+      padding-top: .5em;
+    }
+  }
+  details{
+    padding: 0 0 1px 10px;
+    border-left: 2px solid $grey;
+  }
+  &_buttons{
+    margin-top: 15px;
+    @include clearfix;
+  }
+}

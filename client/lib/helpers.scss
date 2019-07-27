@@ -1,0 +1,58 @@
+@import '{}/client/lib/all';
+
+.PropContainer{
+	border-left: 2px solid $grey;
+  padding-left: 10px;
+}
+
+.Clearfix{
+	@include clearfix;
+}
+
+.FloatLeft{
+	float: left;
+}
+
+.FloatRight{
+	float: right;
+}
+
+.Bold{
+	font-weight: bold;
+}
+
+.DeleteButton{
+	@include deleteButton;
+}
+
+.MergeButton{
+	@include mergeButton;
+}
+
+.TextButton{
+	@include textButton;
+}
+
+.Button{
+	@include button;
+}
+
+.Caret{
+	@include caret;
+}
+
+.ChildRelButton{
+	&:after{
+		content: $RightArrow;
+		position: relative;
+		top: 1px;
+	}
+}
+
+.ParentRelButton{
+	&:before{
+		content: $LeftArrow;
+		position: relative;
+    top: 1px;
+	}
+}
