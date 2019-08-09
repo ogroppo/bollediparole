@@ -18,18 +18,15 @@ $modalPadding: 15px 15px;
 	&_panel{
 		position: absolute;
 		left: 50%;
-		top: 30%;
-		transform: translate(-50%, -30%);
-		border-radius: 3px;
-		border: 1px solid white;
+		top: 40%;
+		transform: translate(-50%, -40%);
+		border-radius: 50%;
 		background: #00b4ff;
-		width: 60vh;
-		height: 60vh;
+		width: 450px;
+		height: 450px;
     padding: 80px 50px;
-    max-width: 98%;
-    max-height: 98%;
-    overflow-y: scroll;
-    border-radius: 50%;
+    max-width: 125vw;
+    max-height: 125vw;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
     text-align: center;
 		header{
@@ -46,7 +43,7 @@ $modalPadding: 15px 15px;
 		}
 
 		footer{
-      margin-top: 12px;
+      margin-top: 20px;
       display: flex;
       justify-content: center;
 		}

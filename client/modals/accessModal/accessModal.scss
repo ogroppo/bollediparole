@@ -1,0 +1,11 @@
+@import '{}/client/lib/all';
+
+.accessModal{
+  padding-top: 60px;
+  .formSelection{
+    margin-bottom: 15px;
+  }
+  [type="radio"]{
+    margin: 0 10px;
+  }
+}

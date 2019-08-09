@@ -1,35 +1,6 @@
 <template name="homePage">
 	<div class="homePage">
     {{>header}}
-    {{#each bubbles}}
-      {{#with index=@index text=text author=author}}
-        {{>bubble}}
-      {{/with}}
-    {{/each}}
-    {{#if bubbleDetail}}
-      <div class="readBubble">
-        <div class="author">
-          {{bubbleDetail.author}}
-        </div>
-        <div class="text">
-          {{bubbleDetail.title}}
-        </div>
-        <div class="text">
-          {{bubbleDetail.text}}
-        </div>
-        <button class="chiudiBolla">Chiudi Bolla</button>
-      </div>
-    {{/if}}
+    {{>bubbles}}
 	</div>
-</template>
-
-<template name="bubble">
-  <div class="bubble {{class}}" style="left:{{left}}px">
-    <div class="title">
-      {{title}}
-    </div>
-    <div class="text">
-      {{text}}
-    </div>
-  </div>
 </template>

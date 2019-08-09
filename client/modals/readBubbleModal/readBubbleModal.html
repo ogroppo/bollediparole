@@ -1,0 +1,25 @@
+<template name="readBubbleModal">
+  {{#modal class="readBubbleModal"}}
+
+    <div class="title">
+      {{title}}
+    </div>
+    <div class="categories">
+      {{#each categories}}
+        <a class="cateogryLink" href="{{pathFor 'categoryRoute' categoryName=this}}">{{this}}</a>
+      {{/each}}
+    </div>
+    <div class="author">
+      <span>Soffiata da</span> <a href="{{pathFor 'userRoute' _id=createdBy}}">{{author}}</a> {{ToReadeableDate createdAt}}
+    </div>
+    <div class="text">
+      {{text}}
+    </div>
+    <footer>
+      <button class="Button shareButton">Condividi</button>
+      {{#if Equals currentUser._id createdBy}}
+        <button class="Button deleteBubble">Scoppia</button>
+      {{/if}}
+    </footer>
+  {{/modal}}
+</template>

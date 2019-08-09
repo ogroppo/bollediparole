@@ -1,21 +1,19 @@
 <template name="header">
 	<header class="header">
 		<div class="header_content">
-      {{#if currentUser}}
-        <button class="createBubbleButton" modal="createBubbleModal">Soffia bolla</button>
-      {{/if}}
-			<h1>Bolle di parole</h1>
 			{{#unless loggingIn}}
         <div class="header_access">
   				{{#if currentUser}}
   					{{currentUser.username}}
   				{{else}}
-  						<button modal="loginModal">Login</button>
-  						<span>or</span>
-  						<button modal="registerModal">Register</button>
+  					<button modal="accessModal">Accedi</button>
   				{{/if}}
         </div>
 			{{/unless}}
+      <h1>BolleDiParole</h1>
+      {{#if currentUser}}
+        <button class="createBubbleButton" modal="createBubbleModal">Soffia bolla</button>
+      {{/if}}
 		</div>
 	</header>
 </template>

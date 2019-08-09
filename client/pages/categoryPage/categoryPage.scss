@@ -1,0 +1,15 @@
+@import '{}/client/lib/all';
+
+.categoryPage{
+  min-height: 100%;
+  .bubbles{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    &_container{
+      // height: calc(100vh - 84px);
+      // overflow: scroll;
+      // position: relative;
+    }
+  }
+}

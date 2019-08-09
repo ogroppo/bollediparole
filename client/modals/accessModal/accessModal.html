@@ -1,0 +1,16 @@
+<template name="accessModal">
+	{{#modal class="accessModal"}}
+    <header>
+      <h2>Ciao!</h2>
+    </header>
+    <div class="formSelection">
+      <input type="radio" checked name="form" id="login" value="login" /><label for="login">Fammi entrare</label>
+      <input type="radio" name="form" id="register" value="register" /><label for="register">Aggiungimi</label>
+    </div>
+    {{#if Equals (ReactiveVarGet 'form') 'login'}}
+      {{>loginForm}}
+    {{else}}
+		  {{>registrationForm}}
+    {{/if}}
+	{{/modal}}
+</template>

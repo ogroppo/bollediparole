@@ -1,0 +1,23 @@
+.bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: inset 0px 5px 20px 5px white;
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  transition: left 2s, top 2s, width 2s, height 2s;
+  &:focus{
+    border: 2px solid blue;
+  }
+  &_copy{
+    padding: 5px;
+  }
+}

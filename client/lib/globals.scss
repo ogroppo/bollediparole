@@ -8,11 +8,11 @@ body {
 	height: 100%;
 	margin: 0;
   padding: 0;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.2;
 	background: #00b4ff;
 	color: white;
-  font-family: 'Covered By Your Grace', cursive;
+  font-family: 'Indie Flower', cursive;
 	overflow-x: hidden;
 }
 
@@ -49,18 +49,11 @@ button{
 	cursor: pointer;
 	font-size: inherit;
 	line-height: 1;
-  font-family: 'Covered By Your Grace', cursive;
+  font-family: 'Gochi Hand', cursive;
   color: white;
 	&::-moz-focus-inner {
 	  border: 0;
 	}
-}
-
-a{
-  color: white;
-  &:visited{
-    color: white;
-  }
 }
 
 input[type="file"]{
@@ -121,11 +114,11 @@ a{
   & > * {
     cursor: pointer;
   }
-	text-decoration: none;
-	color: $blue;
+	text-decoration: underline;
+	color: white;
 	border-radius: 2px;
 	&:hover{
-		color: $blue;
+		color: white;
 		text-decoration: underline;
     *{
       text-decoration: underline;
@@ -133,7 +126,7 @@ a{
 	}
 	@include boxFocus;
 	&:visited{
-		color: $blue;
+		color: white;
 	}
   .icon{
     margin-right: 4px;

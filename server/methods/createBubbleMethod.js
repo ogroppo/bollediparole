@@ -1,10 +1,10 @@
 Meteor.methods({
-  createBubbleMethod(title, labels, text){
+  createBubbleMethod(title, categories, text){
     BubbleCollection.insert({
       title,
-      labels,
+      categories,
       text
     })
-    
+
   }
 })

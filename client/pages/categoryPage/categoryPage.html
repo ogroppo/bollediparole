@@ -1,0 +1,12 @@
+<template name="categoryPage">
+	<div class="categoryPage">
+    {{>header}}
+    <div class="bubbles_container">
+      <div class="bubbles">
+        {{#each ReactiveVarGet 'bubbles'}}
+          {{>bubble}}
+        {{/each}}
+      </div>
+    </div>
+	</div>
+</template>

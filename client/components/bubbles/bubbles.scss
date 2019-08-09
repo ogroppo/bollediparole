@@ -1,0 +1,11 @@
+@import '{}/client/lib/all';
+
+.bubbles{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  &_center{
+    position: absolute;
+    transition: left 2s, top 2s;
+  }
+}

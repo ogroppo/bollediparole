@@ -20,7 +20,7 @@ Template.registerHelper('FromNow', (date)=> date?moment(date).fromNow():'' )
 
 Template.registerHelper('ToExpNotation', number => ToExpNotation(number))
 
-Template.registerHelper('ToReadeableDate', date => date ? moment(date).format('DD MMM YYYY HH:mm') : '' )
+Template.registerHelper('ToReadeableDate', date => date ? moment(date).format('[il] D MM YYYY [alle] HH:mm') : '' )
 
 Template.registerHelper('CurrentUserName', () => Meteor.user().username )
 

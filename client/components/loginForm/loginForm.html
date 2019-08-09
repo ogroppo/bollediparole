@@ -1,0 +1,21 @@
+<template name="loginForm">
+  {{#form class="loginForm"}}
+    <label for="Email">Qual'è il tuo indirizzo elettronico?</label>
+    <input
+      id="Email"
+      type="email"
+      name="email"
+      required="required"
+    />
+    <label for="Email">La tua parola segreta</label>
+    <input
+      type="password"
+      id="Password"
+      name="password"
+      required="required"
+    />
+    <footer>
+      <button type="submit" class="Button">Entra</button>
+    </footer>
+  {{/form}}
+</template>

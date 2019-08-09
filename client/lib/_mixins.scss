@@ -176,7 +176,7 @@ $caretSize: 4px;
 	border: 1px solid white;
 	border-radius: 5px;
 	width: 100%;
-	font-size: 13px;
+	font-size: 16px;
 	transition: all .2s;
 	@include boxFocus;
 }
@@ -198,7 +198,7 @@ $caretSize: 4px;
 
 @mixin button{
   white-space: nowrap;
-  font-size: 14px;
+  font-size: 18px;
 	color: white;
 	border: 1px solid white;
 	border-radius: 8px;
