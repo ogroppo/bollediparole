@@ -18,13 +18,16 @@ Template.modal.events({
       return CloseModal()
     }
 
+    if(event.keyCode !== 9) //not a focus
+      return
+
 		let focusableElements = template.findAll(FocusableElementsSelector)
-		if (event.shiftKey && event.keyCode === 9) {
+		if (event.shiftKey) {
 			if(document.activeElement.isSameNode(focusableElements[0])){
 				event.preventDefault()
 				focusableElements[focusableElements.length - 1].focus()
 			}
-    } else if(event.keyCode === 9) {
+    } else {
 			if(document.activeElement.isSameNode(focusableElements[focusableElements.length - 1])){
 				event.preventDefault()
 				focusableElements[0].focus()
@@ -44,6 +47,9 @@ OpenModal = (templateName, trigger, options = {}) => {
 }
 
 CloseModal = () => {
-	Blaze.remove(modalTemplate)
-	modalTrigger.focus()
+  $('.modal_panel').addClass('animationOut')
+  Meteor.setTimeout(()=>{
+    Blaze.remove(modalTemplate)
+    modalTrigger.focus()
+  }, 1000)
 }

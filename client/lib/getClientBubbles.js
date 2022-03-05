@@ -7,10 +7,10 @@ getClientBubbles = (bubbleCursor) => {
     left: 0,
     top: 0
   }
-  const centerBubble = Session.get('centerBubble')
+  const centerBubbleId = Session.get('centerBubbleId')
   bubbleCursor.forEach((bubble, index) => {
     bubble.r = Math.random() * 30 + 30
-    if(centerBubble === bubble._id)
+    if(centerBubbleId === bubble._id)
       bubble.r = 100
     bubble.width = bubble.r * 2
     bubble.height = bubble.r * 2
@@ -78,7 +78,7 @@ getClientBubbles = (bubbleCursor) => {
     if(bubbleTopBoundary < minY)
       minY = bubbleTopBoundary
 
-    if(centerBubble === bubble._id)
+    if(centerBubbleId === bubble._id)
       center = {
         left: -bubble.left,
         top: -bubble.top

@@ -1,25 +1,62 @@
 <template name="readBubbleModal">
   {{#modal class="readBubbleModal"}}
-
-    <div class="title">
-      {{title}}
-    </div>
-    <div class="categories">
-      {{#each categories}}
-        <a class="cateogryLink" href="{{pathFor 'categoryRoute' categoryName=this}}">{{this}}</a>
-      {{/each}}
-    </div>
-    <div class="author">
-      <span>Soffiata da</span> <a href="{{pathFor 'userRoute' _id=createdBy}}">{{author}}</a> {{ToReadeableDate createdAt}}
-    </div>
-    <div class="text">
-      {{text}}
-    </div>
-    <footer>
-      <button class="Button shareButton">Condividi</button>
+    {{#if (ReactiveVarGet 'edit')}}
+      {{#form class="editBubbleForm"}}
+        <h2>Risoffia la tua bolla</h2>
+        <label for="title">Titolo</label>
+        <input
+          id="title"
+          type="text"
+          name="title"
+          required="required"
+          value="{{title}}"
+        />
+        <label for="categories">Categorie</label>
+        <input
+          type="text"
+          id="categories"
+          name="categories"
+          required="required"
+          value="{{categoriesString}}"
+        />
+        <label for="text">Le tue nuove parole</label>
+        <textarea id="text" name="text" required="required">{{text}}</textarea>
+        <footer>
+          <button class="Button shareButton">Fatto</button>
+        </footer>
+      {{/form}}
+    {{else}}
+      <button event="CloseModal" class="Button closeBubble">Chiudi</button>
       {{#if Equals currentUser._id createdBy}}
-        <button class="Button deleteBubble">Scoppia</button>
+          <button class="Button deleteBubble">Scoppia</button>
+          <button class="Button editBubble">Risoffia</button>
       {{/if}}
-    </footer>
+      <div class="title">
+        {{title}}
+        {{#if ReactiveVarGet 'showInfo'}}
+        <div class="info">
+          <span>Soffiata da</span> <a href="{{pathFor 'userRoute' _id=createdBy}}">{{#if Equals currentUser._id createdBy}}te{{else}}{{author}}{{/if}}</a> {{ToReadeableDate createdAt}}
+        </div>
+        {{/if}}
+      </div>
+      <div class="categories">
+        {{#each categories}}
+          <a class="cateogryLink" href="{{pathFor 'categoryRoute' categoryName=this}}">{{this}}</a>
+        {{/each}}
+      </div>
+      <div class="text">
+        {{text}}
+      </div>
+      <div class="vote">
+        <button class="voteButton {{#if voted}}voted{{/if}}">Bello{{#if voted}}!{{/if}}</button>
+      </div>
+        {{#if currentUser}}
+          <form class="commentWrap">
+            <img src="/profile.jpeg" alt="Your profile pic" />
+            <input type="text" name="comment" placeholder="Commenta...">
+          </form>
+        {{/if}}
+        <button class="Button shareButton">Condividi</button>
+    {{/if}}
   {{/modal}}
 </template>

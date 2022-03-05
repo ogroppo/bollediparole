@@ -4,7 +4,7 @@
 			{{#unless loggingIn}}
         <div class="header_access">
   				{{#if currentUser}}
-  					{{currentUser.username}}
+  					<button modal="currentUserModal">{{currentUser.username}}</button>
   				{{else}}
   					<button modal="accessModal">Accedi</button>
   				{{/if}}

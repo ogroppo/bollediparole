@@ -1,30 +1,116 @@
+@import '{}/client/lib/all';
+
 .readBubbleModal{
   font-size: 16px;
-  padding-top: 75px;
-  .author{
-    margin-bottom: 10px;
-    opacity: 0.8;
+  padding: 0;
+  .editBubbleForm{
+    margin-top: 60px;
+    padding: 0 60px;
+    textarea{
+      min-height: 100px;
+    }
   }
+
+  button{
+    background: $azul;
+  }
+
   .closeBubble{
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 25px;
+    right: 60px;
+    top: 10px;
+    background: $azul;
   }
   .deleteBubble{
-    margin-left: 10px;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $azul;
+  }
+  .editBubble{
+    position: absolute;
+    left: 65px;
+    top: 10px;
+    background: $azul;
   }
   .title{
-    margin-bottom: 6px;
+    margin: 65px 0 10px;
     font-size: 22px;
     font-weight: 500;
-    padding: 0 20px;
+    padding: 0 80px;
+    position: relative;
+    cursor: pointer;
+    .info{
+      opacity: 0.8;
+      font-size: 13px;
+    }
+  }
+  .categories{
+    margin: 5px 0;
   }
   .text{
-    padding: 10px 0;
     // border-top: 1px solid white;
     // border-bottom: 1px solid white;
-    max-height: 200px;
+    white-space: pre-line;
+    height: 200px;
     overflow-y: auto;
+  }
+  .vote{
+    position: absolute;
+    left: 30px;
+    bottom: 45px;
+    button{
+      @include button;
+    }
+    .voteButton{
+      &.voted{
+        box-shadow: inset 0 0 1em white;
+      }
+    }
+    .currentVote{
+      &:active{
+        & + .moreOpinions{
+          visibility: visible;
+        }
+      }
+    }
+  }
+  .cateogryLink{
+    text-decoration: none;
+    background-color: rgba(white, 0.9);
+    font-weight: bold;
+    color: $azul;
+    border-radius: 6px;
+    padding: 0 6px;
+    line-height: 1;
+  }
+  footer{
+    button{
+      margin: 0 5px;
+    }
+  }
+  .shareButton{
+    position: absolute;
+    right: 0;
+    bottom: 45px;
+    background: $azul;
+  }
+  .commentWrap{
+    position: absolute;
+    bottom: 0;
+    left: 23%;
+    display: flex;
+    img{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    input{
+      margin-left: 5px;
+      margin-top: 5px;
+      background: $azul;
+      border: 1px solid white;
+    }
   }
 }

@@ -1,0 +1,18 @@
+<template name="currentUserModal">
+	{{#modal class="currentUserModal"}}
+    <header>
+      <h2>Tu...</h2>
+    </header>
+    {{#form}}
+      {{#if currentUser.profilePicture}}
+        <img src="currentUser.profilePictureId" alt="{{currentUser.username}}'s profile picture'">
+      {{/if}}
+      {{#with ReactiveVarGet 'currentUpload'}}
+        Uploading <b>{{file.name}}</b>:
+        <span id="progress">{{progress.get}}%</span>
+      {{else}}
+        <input id="profilePicture" type="file" />
+      {{/with}}
+    {{/form}}
+	{{/modal}}
+</template>

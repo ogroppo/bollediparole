@@ -41,6 +41,7 @@ geojson-utils@1.0.10
 hot-code-push@1.0.4
 html-tools@1.0.11
 htmljs@1.0.11
+http@1.4.2
 id-map@1.1.0
 inter-process-messaging@0.1.0
 iron:controller@1.0.12
@@ -80,6 +81,8 @@ npm-bcrypt@0.9.3
 npm-mongo@3.1.2
 observe-sequence@1.0.16
 ordered-dict@1.1.0
+ostrio:cookies@2.3.0
+ostrio:files@1.11.2
 peerlibrary:assert@0.2.5
 peerlibrary:fiber-utils@0.6.0
 peerlibrary:reactive-mongo@0.1.1
@@ -113,5 +116,6 @@ tmeasday:publish-counts@0.8.0
 tracker@1.2.0
 ui@1.0.13
 underscore@1.0.10
+url@1.2.0
 webapp@1.7.3
 webapp-hashing@1.0.9

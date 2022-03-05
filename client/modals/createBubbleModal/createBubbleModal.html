@@ -6,17 +6,20 @@
     {{#form class="createBubbleForm"}}
       <label for="title">Dai un titolo alla tua bolla</label>
       <input
+        id="title"
         type="text"
         name="title"
         required="required"
       />
-      <label for="categories">Scegli una categoria</label>
+      <label for="categories">Scegli una o più categorie</label>
       <input
         type="text"
+        id="categories"
         name="categories"
         required="required"
+        placeholder="Poesia, Sonetto"
       />
-      <label for="text">Metti le tue parole</label>
+      <label for="text">Metti le tue parole qui</label>
       <textarea id="text" name="text" required="required"></textarea>
       <footer>
         <button type="submit" class="Button">Soffia</button>

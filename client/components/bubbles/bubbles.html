@@ -1,9 +1,12 @@
 <template name="bubbles">
   <div class="bubbles">
-    <div class="bubbles_center" style="{{ReactiveVarGet 'reactiveBubblesStyle'}}">
-      {{#each (ReactiveVarGet 'reactiveBubbles')}}
-        {{>bubble}}
-      {{/each}}
+    <div class="bubbles_backdrop"></div>
+    <div class="bubbles_center">
+      <div class="bubbles_wrap" style="{{ReactiveVarGet 'reactiveBubblesStyle'}}">
+        {{#each (ReactiveVarGet 'reactiveBubbles')}}
+          {{>bubble}}
+        {{/each}}
+      </div>
     </div>
   </div>
 </template>

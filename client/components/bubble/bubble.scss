@@ -1,3 +1,5 @@
+@import '{}/client/lib/all';
+
 .bubble {
   display: flex;
   align-items: center;
@@ -13,11 +15,23 @@
   top: 0;
   width: 0;
   height: 0;
-  transition: left 2s, top 2s, width 2s, height 2s;
+  transition: left 1s ease-in-out, top 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
   &:focus{
     border: 2px solid blue;
   }
   &_copy{
     padding: 5px;
+    font-size: 13px;
+    button{
+      transition: all 1s;
+    }
+    .title{
+      font-weight: bold;
+      margin-bottom: 2px;
+      font-size: 1.2em;
+    }
+    .text{
+      //white-space: pre;
+    }
   }
 }

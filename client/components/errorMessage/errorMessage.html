@@ -1,0 +1,8 @@
+<template name="errorMessage">
+	<div class="errorMessage">
+		{{#with SessionGet 'errorMessage'}}
+			<p aria-live="polite">{{reason}}</p>
+		{{/with}}
+		<button aria-label="Close message">close</button>
+	</div>
+</template>

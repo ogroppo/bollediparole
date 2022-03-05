@@ -1,0 +1,19 @@
+@import '{}/client/lib/all';
+
+.errorMessage{
+	@include message;
+	background: $red;
+	color: white;
+  p{
+    margin-left: 10px;
+    font-weight: bold;
+  }
+  button{
+    color: white;
+  }
+  .icon{
+    float: left;
+    font-size: 20px;
+    fill: white;
+  }
+}

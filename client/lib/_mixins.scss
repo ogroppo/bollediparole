@@ -173,8 +173,8 @@ $caretSize: 4px;
 @mixin input{
 	color: white;
   background: none;
-	border: 1px solid white;
-	border-radius: 5px;
+	border: 1px solid rgba(white, 0.5);
+	border-radius: 1em;
 	width: 100%;
 	font-size: 16px;
 	transition: all .2s;
@@ -183,6 +183,11 @@ $caretSize: 4px;
 
 @mixin textInput{
 	@include input;
+  &::placeholder {
+    color: white;
+    opacity: 0.5;
+  }
+
 	height: $InputHeight;
 	padding: 0 6px;
 	transition: all 0.2s;
@@ -191,6 +196,7 @@ $caretSize: 4px;
 @mixin boxFocus{
   &.focus,
 	&:focus{
+    border: 1px solid rgba(white, 0.8);
 		outline: 0;
 		box-shadow: 0 0 0 4px rgba(white, .3);
 	}
@@ -201,8 +207,8 @@ $caretSize: 4px;
   font-size: 18px;
 	color: white;
 	border: 1px solid white;
-	border-radius: 8px;
-	min-height: $InputHeight;
+	border-radius: 1em;
+	min-height: 33px;
 	padding: 0 9px;
 	transition: all 0.2s;
 	.icon{
